@@ -36,7 +36,7 @@
 
 .container:hover .pacman {
   animation: movePacman linear infinite;
-  animation-duration: calc(1s / var(--pacman-speed));
+  animation-duration: calc(3s / var(--pacman-speed));
 }
 
 @keyframes movePacman {
