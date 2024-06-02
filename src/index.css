@@ -1,68 +1,87 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* index.css */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+* {
+  padding: 0;
   margin: 0;
+}
+
+.header {
+  background-color: white;
+  min-height: 80px;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  align-items: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.ul-links {
+  list-style-type: none; /* Remove bullets from the list */
+  padding: 0;
+  margin: 0;
+  margin-left: 12px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.nav-btn {
+  text-decoration: none;
+  color: black;
+  padding: 0.5rem 1rem;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.nav-btn:hover {
+  color: #3182ce;
+  transition: all 0.3s ease-out;
+}
+
+.burger-icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+  display: none; /* Hide the icon by default */
+}
+
+.responsive-menu {
+  position: absolute;
+  top: 100%; /* Display at the bottom of the header */
+  left: 0; /* Start from the left of the screen */
+  width: 100%; /* Cover the full width of the screen */
+  z-index: 10;
+  background-color: white;
+  min-height: 200px;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0; /* Remove border radius */
+}
+
+.res-btn {
+  padding: 0.5rem;
+}
+
+.res-btn a {
+  text-decoration: none;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .ul-links {
+    list-style-type: none;  /* Remove bullets from the list in responsive mode */
+    display: none; /* Hide the links on small screens */
   }
-  a:hover {
-    color: #747bff;
+
+  .res-links{
+    list-style-type: none; 
   }
-  button {
-    background-color: #f9f9f9;
+
+  header {
+    justify-content: flex-end;
+  }
+
+  .links {
+    justify-content: space-between; /* Adjust alignment for small screens */
+  }
+
+  .burger-icon {
+    display: block; /* Show the icon on small screens */
+    cursor: pointer;
   }
 }
