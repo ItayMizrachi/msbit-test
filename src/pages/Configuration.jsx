@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
-import "../css/configuration.css";
+import "../css/configuration-email.css";
 
 const schema = z.object({
   email: z.string().email(),
@@ -24,7 +24,7 @@ const Configuration = () => {
   const onSubmit = async (data) => {
     try {
       await new Promise((res) => setTimeout(res, 1000));
-      console.log(data);
+      console.table(data);
     } catch (error) {
       setError("root", { message: "This email is already taken" });
     }
