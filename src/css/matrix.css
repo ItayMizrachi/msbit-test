@@ -1,0 +1,40 @@
+.matrix-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+  }
+  
+  .matrix-row {
+    display: flex;
+  }
+  
+  .matrix-cell {
+    width: 50px; 
+    height: 50px; 
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .matrix-space {
+    height: 10px; 
+  }
+
+  @media only screen and (max-width: 768px) {
+    .matrix-container h1 {
+        font-size: 24px; 
+        text-align: center;
+      }
+   
+      .matrix-container h2 {
+        font-size: 16px;
+      }
+  
+    .matrix-cell {
+      width: 30px; 
+      height: 30px; 
+    }
+  }
