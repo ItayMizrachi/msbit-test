@@ -33,8 +33,8 @@ const Header = () => {
           </ul>
         </div>
       )}
-      <div className="links">
-        <div className="ul-links res-links">
+      <div>
+        <div className="ul-links">
           {links.map((link, index) => (
             <Link key={index} to={link.path} className="nav-btn">
               {link.text}

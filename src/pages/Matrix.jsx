@@ -28,7 +28,7 @@ const Matrix = () => {
 
   const frobenius = generateFrobeniusMatrix(rows, cols);
 
-  console.log(frobenius.map((row) => row.join(" ")).join("\n"));
+  // console.log(frobenius.map((row) => row.join(" ")).join("\n"));
 
   return (
     <div className="matrix-container">
