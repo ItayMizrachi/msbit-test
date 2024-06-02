@@ -1,0 +1,26 @@
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    height: 80vh;
+  }
+
+  .main-container {
+    max-width: 500px;
+    padding: 20px;
+  }
+  
+  .title {
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .main {
+      height: auto; /* Adjust height for smaller screens */
+    }
+  
+    .title {
+      font-size: 20px; /* Adjust title size for smaller screens */
+    }
+  }
