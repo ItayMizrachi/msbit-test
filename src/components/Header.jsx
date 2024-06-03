@@ -31,7 +31,7 @@ const Header = () => {
       <div className="page-name">{pageName}</div>
       {burger && (
         <div className="responsive-menu">
-          <ul className="p-2 res-links">
+          <ul className="res-links">
             {renderLinks("res-btn", () => setBurger(false))}
           </ul>
         </div>
