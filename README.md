@@ -9,7 +9,7 @@ Follow these instructions to set up and run the project on your local machine.
 1. **Clone the Repository**
 
     ```sh
-    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/ItayMizrachi/msbit-test.git)
+    git clone https://github.com/ItayMizrachi/msbit-test.git
     ```
 
 2. **Install Dependencies**
