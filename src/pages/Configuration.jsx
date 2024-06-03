@@ -58,7 +58,7 @@ const Configuration = () => {
           <div className="error-message">{errors.emailLength.message}</div>
         )}
         <label htmlFor="matrixCol" className="label">
-          matrix columns length
+          Matrix columns length
         </label>
         <input
           {...register("matrixCol")}
@@ -70,7 +70,7 @@ const Configuration = () => {
           <div className="error-message">{errors.matrixCol.message}</div>
         )}
         <label htmlFor="matrixRow" className="label">
-          matrix rows length
+          Matrix rows length
         </label>
         <input
           {...register("matrixRow")}
