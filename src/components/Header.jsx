@@ -17,34 +17,31 @@ const Header = () => {
     { path: "/pacman", text: "Pacman" },
   ];
 
+  const renderLinks = (className, onClick) =>
+    links.map((link, index) => (
+      <li key={index} className={className}>
+        <Link onClick={onClick} to={link.path}>
+          {link.text}
+        </Link>
+      </li>
+    ));
+
   return (
     <header>
       <div className="page-name">{pageName}</div>
       {burger && (
         <div className="responsive-menu">
           <ul className="p-2 res-links">
-            {links.map((link, index) => (
-              <li key={index} className="res-btn">
-                <Link onClick={() => setBurger(!burger)} to={link.path}>
-                  {link.text}
-                </Link>
-              </li>
-            ))}
+            {renderLinks("res-btn", () => setBurger(false))}
           </ul>
         </div>
       )}
       <div>
-        <div className="ul-links">
-          {links.map((link, index) => (
-            <Link key={index} to={link.path} className="nav-btn">
-              {link.text}
-            </Link>
-          ))}
-        </div>
+        <div className="ul-links">{renderLinks("nav-btn")}</div>
         <div>
           <Bars3Icon
             onClick={() => setBurger(!burger)}
-            className={`burger-icon  ${burger ? "active" : ""}`}
+            className={`burger-icon ${burger ? "active" : ""}`}
           />
         </div>
       </div>

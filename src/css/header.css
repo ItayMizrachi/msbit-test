@@ -5,6 +5,7 @@ header {
   top: 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
+  justify-content: space-between;
   align-items: center;
   font-weight: bold;
   z-index: 10;
@@ -13,60 +14,23 @@ header {
 .ul-links {
   list-style-type: none;
   padding: 0;
-  margin: 0;
-  margin-left: 12px;
+  margin: 0 0 0 12px;
   display: flex;
 }
 
-.nav-btn {
+.nav-btn a {
   text-decoration: none;
   color: rgb(226 232 240);
   padding: 8px 16px;
 }
 
-.nav-btn:hover {
-  color: #cacfd4;
+.nav-btn:hover a {
+  color: lightgray;
   transition: all 0.3s ease-out;
 }
 
 .burger-icon {
-  width: 32px;
-  height: 32px;
-  margin-right: 8px;
   display: none;
-  color: aliceblue;
-}
-
-.responsive-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  background-color: white;
-  min-height: 200px;
-  padding: 12px;
-  border: 1px solid #ccc;
-}
-
-.res-btn {
-  padding: 8px;
-}
-
-.res-btn a {
-  text-decoration: none;
-  color: black;
-  display: block;
-  width: 100%;
-}
-
-.res-btn:hover {
-  background-color: rgba(30, 41, 59, 0.1);
-}
-
-.res-link-name {
-  color: black;
-  font-weight: bold;
 }
 
 .page-name {
@@ -74,12 +38,7 @@ header {
 }
 
 @media (max-width: 768px) {
-  header {
-    justify-content: space-between;
-    padding-left: 16px;
-  }
   .ul-links {
-    list-style-type: none;
     display: none;
   }
 
@@ -87,23 +46,57 @@ header {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display: block;
   }
 
-  .burger-icon {
-    display: block;
-    cursor: pointer;
-    margin-right: 12px;
-  }
-
-  .page-name {
-    display: block;
-    color: rgb(226 232 240);
-  }
   .res-btn {
     padding: 12px;
     cursor: pointer;
     font-weight: bold;
     border-radius: 4px;
     width: 100%;
+  }
+
+  .res-btn a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    width: 100%;
+  }
+
+  .res-btn:hover {
+    background-color: rgba(30, 41, 59, 0.1);
+  }
+
+  .res-btn:hover a {
+    color: rgb(30 41 59);
+    transition: all 0.3s ease-out;
+  }
+
+  .burger-icon {
+    display: block;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    color: aliceblue;
+  }
+
+  .page-name {
+    display: block;
+    margin-left: 12px;
+    color: rgb(226 232 240);
+  }
+
+  .responsive-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: white;
+    min-height: 200px;
+    padding: 12px;
+    border: 1px solid #ccc;
   }
 }
