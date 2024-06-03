@@ -41,7 +41,7 @@ const Header = () => {
         <div>
           <Bars3Icon
             onClick={() => setBurger(!burger)}
-            className={`burger-icon ${burger ? "active" : ""}`}
+            className={`burger-icon`}
           />
         </div>
       </div>
