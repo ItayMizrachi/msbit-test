@@ -17,10 +17,10 @@ main {
   
   @media (max-width: 768px) {
     .main {
-      height: auto; /* Adjust height for smaller screens */
+      height: auto; 
     }
   
     .title {
-      font-size: 20px; /* Adjust title size for smaller screens */
+      font-size: 20px; 
     }
   }

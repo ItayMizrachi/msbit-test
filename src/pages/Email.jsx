@@ -1,14 +1,17 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-import "../css/configuration-email.css";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useMaskLengthSelectors } from "../zustand-stores/masked-length-store";
+import "../css/configuration-email.css";
 
 const schema = z.object({
   email: z.string().email(),
 });
 
 const Email = () => {
+  const maskedLength = useMaskLengthSelectors.use.maskedLength();
+
   const {
     register,
     handleSubmit,
@@ -27,29 +30,17 @@ const Email = () => {
 
     // Determine how to mask the local part based on its length
     switch (true) {
-      case localPart.length > 4:
-        // If the local part is longer than 4 characters, mask the last 4 characters
-        maskedLocalPart = localPart.slice(0, -4) + "****";
+      case localPart.length > maskedLength:
+        // If the local part is longer than maskedLength characters, mask the last maskedLength characters
+        maskedLocalPart =
+          localPart.slice(0, -maskedLength) + "*".repeat(maskedLength);
         break;
-      case localPart.length === 4:
-        // If the local part is exactly 4 characters, mask the last 3 characters
-        maskedLocalPart = localPart[0] + "***";
+      case localPart.length <= maskedLength:
+        // If the local part is shorter than or equal to maskedLength, mask all characters except the first one
+        maskedLocalPart = localPart[0] + "*".repeat(localPart.length - 1);
         break;
-      case localPart.length === 3:
-        maskedLocalPart = localPart[0] + "**";
-        break;
-      case localPart.length === 2:
-        maskedLocalPart = localPart[0] + "*";
-        break;
-      case localPart.length === 1:
-        // If the local part is 1 character, mask the character completely
-        maskedLocalPart = "*";
-        break;
-      default:
-        maskedLocalPart = localPart;
     }
 
-    // Return the masked email address
     return `${maskedLocalPart}@${domain}`;
   };
   const onSubmit = async (data) => {
@@ -64,6 +55,7 @@ const Email = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="form-container">
+      <h1>Masked Email</h1>
       <div className="form-group">
         <label htmlFor="email" className="label">
           Email

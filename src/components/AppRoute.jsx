@@ -5,7 +5,7 @@ import Configuration from "../pages/Configuration";
 import Email from "../pages/Email";
 import Matrix from "../pages/Matrix";
 import Pacman from "../pages/Pacman";
-import Header from "../header/Header";
+import Header from "./Header";
 
 const AppRoute = () => {
   return (

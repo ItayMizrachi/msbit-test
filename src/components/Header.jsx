@@ -1,13 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Bars3Icon } from "@heroicons/react/16/solid";
-import "./header.css";
+import "../css/header.css";
 
 const Header = () => {
   const [burger, setBurger] = useState(false);
   const location = useLocation();
   const path = location.pathname.split("/").pop();
-  const formattedPath = path.charAt(0).toUpperCase() + path.slice(1);
+  const pageName = path.charAt(0).toUpperCase() + path.slice(1);
 
   const links = [
     { path: "/", text: "Home" },
@@ -19,13 +19,15 @@ const Header = () => {
 
   return (
     <header>
-      <div className="page-name">{formattedPath}</div>
+      <div className="page-name">{pageName}</div>
       {burger && (
         <div className="responsive-menu">
           <ul className="p-2 res-links">
             {links.map((link, index) => (
               <li key={index} className="res-btn">
-                <Link to={link.path}>{link.text}</Link>
+                <Link onClick={() => setBurger(!burger)} to={link.path}>
+                  {link.text}
+                </Link>
               </li>
             ))}
           </ul>
@@ -39,10 +41,10 @@ const Header = () => {
             </Link>
           ))}
         </div>
-        <div className="flex justify-end">
+        <div>
           <Bars3Icon
             onClick={() => setBurger(!burger)}
-            className={`burger-icon nav-btn ${burger ? "active" : ""}`}
+            className={`burger-icon  ${burger ? "active" : ""}`}
           />
         </div>
       </div>
