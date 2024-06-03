@@ -34,7 +34,7 @@ const Matrix = () => {
     <div className="matrix-container">
       <h1>Frobenius Matrix</h1>
       <h2>Rows: {rows}</h2>
-      <h2>Columns: {cols}</h2>
+      <h2 className="col-title">Columns: {cols}</h2>
       {frobenius.map((row, rowIndex) => (
         <div key={rowIndex} className="matrix-row">
           {row.map((cell, cellIndex) => (

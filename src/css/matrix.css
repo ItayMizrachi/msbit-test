@@ -5,23 +5,28 @@
     align-items: center;
     padding: 100px;
   }
+
+  .col-title{
+    margin-bottom: 16px;
+  }
   
   .matrix-row {
     display: flex;
-  }
-  
-  .matrix-cell {
+}
+
+.matrix-cell {
     width: 50px; 
     height: 50px; 
     border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .matrix-space {
+}
+
+.matrix-space {
     height: 10px; 
   }
+  
 
   @media only screen and (max-width: 768px) {
     .matrix-container h1 {
