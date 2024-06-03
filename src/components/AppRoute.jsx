@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Footer from "./Footer";
+import Header from "./Header";
 import Main from "../pages/Main";
 import Configuration from "../pages/Configuration";
 import Email from "../pages/Email";
 import Matrix from "../pages/Matrix";
 import Pacman from "../pages/Pacman";
-import Header from "./Header";
+import Footer from "./Footer";
 
 const AppRoute = () => {
   return (

@@ -22,7 +22,7 @@ const Configuration = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isSubmitted },
   } = useForm({
     defaultValues: { emailLength: 4, matrixCol: 9, matrixRow: 9, pacmanS: 2 },
     resolver: zodResolver(schema),
@@ -98,6 +98,7 @@ const Configuration = () => {
         <button disabled={isSubmitting} type="submit" className="button">
           {isSubmitting ? "Loading..." : "Submit"}
         </button>
+        {isSubmitted && <p className="submitted">Submitted!</p>}
       </div>
     </form>
   );

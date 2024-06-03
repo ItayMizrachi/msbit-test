@@ -46,7 +46,6 @@ const Email = () => {
   const onSubmit = async (data) => {
     try {
       await new Promise((res) => setTimeout(res, 1000));
-      console.log(data);
       setUserEmail(maskEmail(data.email));
     } catch (error) {
       console.log(error);
@@ -58,7 +57,7 @@ const Email = () => {
       <h1>Masked Email</h1>
       <div className="form-group">
         <label htmlFor="email" className="label">
-          Email
+          Email Address
         </label>
         <input
           {...register("email")}
